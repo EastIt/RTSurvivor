@@ -23,6 +23,15 @@ bin\rts.exe        # игра
 bin\rts.exe --selftest   # headless-прогон симуляции (баланс/регрессии)
 ```
 
+> **Бинарные зависимости в репозитории не хранятся.** Перед первой сборкой
+> скачайте raylib 6.2 (win64, вариант под ваш компилятор) с
+> [github.com/raysan5/raylib/releases](https://github.com/raysan5/raylib/releases)
+> и положите заголовки в `third_party/raylib_mingw\include`, статическую
+> библиотеку — в `third_party/raylib_mingw\lib` (build.bat использует именно
+> MinGW-вариант `libraylib.a`). Шрифт PT Sans положите в
+> `assets/fonts/ptsans.ttf`. Готовая сборка без этих телодвижений — в ветке
+> `friend-guide`.
+
 ## Управление
 
 | Клавиши | Действие |
@@ -48,8 +57,8 @@ bin\rts.exe --selftest   # headless-прогон симуляции (балан�
 src/sim.h, src/sim.cpp   — чистая симуляция (без raylib): можно гонять headless
 src/main.cpp             — окно, рендер, UI, самотест
 docs/                    — TECHNICAL.md (техдок), CPP_TOUR.md (экскурс в C++)
-third_party/raylib/      — бинарники raylib 6.2 (MSVC)
-third_party/raylib_mingw/— бинарники raylib 6.2 (MinGW)
+third_party/raylib/      — бинарники raylib 6.2 (MSVC) — скачать, см. выше
+third_party/raylib_mingw/— бинарники raylib 6.2 (MinGW) — скачать, см. выше
 assets/fonts/            — PT Sans (кириллица)
 ```
 
